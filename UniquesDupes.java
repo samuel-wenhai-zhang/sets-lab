@@ -12,17 +12,25 @@ public class UniquesDupes
 {
 	public static Set<String> getUniques(String input)
 	{
-		Set<String> uniques = new TreeSet<String>();
 
-		//add code
+		String[] words = input.split(" ");
+		Set<String> uniques = new TreeSet<String>(Arrays.asList(words));
 
 		return uniques;
 	}
 
 	public static Set<String> getDupes(String input)
 	{
-		//add code
+		Set<String> dupes = new TreeSet<String>();
+		Set<String> set = new TreeSet<String>();
+		String[] words = input.split(" ");
+		for(String word : words) {
+			if (!set.add(word)) {
+				dupes.add(word);
+			}
+		}
 		
-		return null;
+		
+		return dupes;
 	}
 }
