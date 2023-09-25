@@ -12,7 +12,7 @@ public class OddRunner
 {
 	public static void main( String args[] ) throws IOException
 	{
-		Scanner file = new Scanner(new File("oddeven.dat"));
+		Scanner file = new Scanner(new File("oddevendata.dat"));
 		while(file.hasNext())
 		{
 			String sent = file.nextLine();

@@ -12,12 +12,17 @@ public class MathSet
 	private Set<Integer> one;
 	private Set<Integer> two;
 
-	public MathSet()
-	{
-	}
-
 	public MathSet(String o, String t)
 	{
+		one = new TreeSet<Integer>();
+		two = new TreeSet<Integer>();
+		String[] words1 = o.split(" "), words2 = o.split(" ");
+		for (String word : words1) {
+			one.add(Integer.parseInt(word));
+		}
+		for (String word : words2) {
+			two.add(Integer.parseInt(word));
+		}
 	}
 
 	public Set<Integer> union()
