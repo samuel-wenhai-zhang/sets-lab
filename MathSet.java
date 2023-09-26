@@ -16,7 +16,8 @@ public class MathSet
 	{
 		one = new TreeSet<Integer>();
 		two = new TreeSet<Integer>();
-		String[] words1 = o.split(" "), words2 = o.split(" ");
+		String[] words1 = o.split(" ");
+		String[] words2 = t.split(" ");
 		for (String word : words1) {
 			one.add(Integer.parseInt(word));
 		}
@@ -27,29 +28,46 @@ public class MathSet
 
 	public Set<Integer> union()
 	{
-		return null;
+		Set<Integer> union = new TreeSet<Integer>();
+		union.addAll(one);
+		union.addAll(two);
+		return union;
 	}
 
 	public Set<Integer> intersection()
 	{
-		return null;
+		Set<Integer> intersection = new TreeSet<Integer>();
+		intersection.addAll(one);
+		intersection.retainAll(two);
+		return intersection;
 	}
 
 	public Set<Integer> differenceAMinusB()
 	{
-		return null;
+		Set<Integer> difference = new TreeSet<Integer>();
+		difference.addAll(one);
+		difference.removeAll(two);
+		return difference;
 	}
 
 	public Set<Integer> differenceBMinusA()
 	{
-		return null;
+		Set<Integer> difference = new TreeSet<Integer>();
+		difference.addAll(two);
+		difference.removeAll(one);
+		return difference;
 	}
-	
+
 	public Set<Integer> symmetricDifference()
-	{		
-		return null;
-	}	
-	
+	{
+		Set<Integer> symmetry = new TreeSet<Integer>();
+		Set<Integer> union = union();
+		Set<Integer> intersection = intersection();
+		symmetry.addAll(union);
+		symmetry.removeAll(intersection);
+		return symmetry;
+	}
+
 	public String toString()
 	{
 		return "Set one " + one + "\n" +	"Set two " + two +  "\n";
