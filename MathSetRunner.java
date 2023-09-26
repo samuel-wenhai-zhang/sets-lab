@@ -22,7 +22,7 @@ public class MathSetRunner
 			System.out.println("intersection - " + ms.intersection());
 			System.out.println("difference A-B - " + ms.differenceAMinusB());
 			System.out.println("difference B-A - " + ms.differenceBMinusA());
-			System.out.println("symmetric difference - " + ms.symmetricDifference() + "\n\n");
+			System.out.println("symmetric difference " + ms.symmetricDifference() + "\n\n");
 		}
 	}
 }
